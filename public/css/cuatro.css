@@ -1,0 +1,134 @@
+/* Página principal */
+.oferta {
+    background-color: #efefef;
+    text-decoration: none;
+}
+.filtros{
+    text-align: center;
+}
+.filtros input, .filtros select{
+    display: block;
+    margin-bottom: 10px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    border: 1px solid #070707;
+    margin: 0 auto;
+}
+.filtros button,.restablecer, .botonVende{
+    display: block;
+    margin-top: 10px;
+    border: 0px solid ;
+    background-color: #070707;
+    color: #F05829;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+}
+.botonVende{
+    
+    text-align: center;
+}
+/* Formulario para publicar oferta */
+.vender form{
+    text-align: center;
+    max-width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.vender form *{
+    display: inline-block;
+    text-align: center;
+    margin: 5px auto;
+}
+#vender input, #vender select, #vender textarea{
+    display: block;
+    width: 100%;
+}
+#vender label{
+    font-size: 1.2em;
+}
+#vender button{
+    padding: 5px 20px;
+    border: 2px solid #4B4646;
+    background-color: transparent;
+}
+#vender>div{
+    align-content: center;
+    padding: 0 20px;
+}
+#vender>div:nth-child(1){
+    width: 100% !important;
+}
+#vender>div:nth-child(2){
+    width: 50% !important;
+}
+#vender>div:nth-child(3){
+    width: 50% !important;
+}
+#vender>div:nth-child(4){
+    width: 100% !important;
+}
+#vender>div:nth-child(5){
+    width: 33% !important;
+}
+#vender>div:nth-child(6){
+    width: 33% !important;
+}
+#vender>div:nth-child(7){
+    width: 33% !important;
+}
+#vender>div:nth-child(8){
+    width: 33% !important;
+}
+#vender>div:nth-child(9){
+    width: 33% !important;
+}
+#vender>div:nth-child(10){
+    width: 33% !important;
+}
+#vender>div:nth-child(11){
+    width: 50% !important;
+}
+#vender>div:nth-child(12){
+    width: 50% !important;
+}
+#vender>div:nth-child(13){
+    width: 50% !important;
+}
+#vender>div:nth-child(14){
+    width: 50% !important;
+}
+
+/* Página de oferta*/
+.tituloCoche{
+    background-color: #efefef;
+    margin: 0 auto;
+}
+
+.datosCoche{
+    margin: 0 auto;
+    background-color: #efefef;
+    color: #757575;
+}
+.datosVendedor{
+    margin: 0 auto;
+    background-color: #efefef;
+    color: #757575;
+}
+.eliminarOferta{
+    margin: 0 auto;
+    background-color: #efefef;
+}
+.eliminarOferta a{
+    text-decoration: none;
+    
+}
+.foto{
+    margin: 0 auto;
+}
+.volver{
+    margin-top: 20px;
+    color: #F05829;
+    background-color: #070707;
+    padding: 5px 10px;
+}

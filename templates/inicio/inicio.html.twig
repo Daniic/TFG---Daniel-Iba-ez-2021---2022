@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RuedaQueRueda
+{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/inicio.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+{% endblock %}
+{% block body %}
+	{% include "header.html.twig" %}
+	{% include "slider.html.twig" %}
+	<div class="row m-md-5">
+		<div class="f1 col-12 col-lg-8 border-lg-end border-lg-dark ">
+			<h2 class="text-center fw-bold">Todo sobre F1</h2>
+			<hr>
+			{% for f1 in articulosF1 %}
+				<a href="/articulo/{{f1.id}}" class="articuloF1 row my-4 rounded-3 border border-dark p-3 w-100">
+					<div class="contenidoF1 col-7 d-flex flex-column">
+
+						<h3 class="fw-bold">{{f1.titulo}}</h3>
+						<h5>{{f1.subtitulo}}</h5>
+						{% if f1.puntuacion >= 0 %}
+
+							<p>{{f1.puntuacion}}
+								<i class="fa-solid fa-thumbs-up fs-5"></i>
+							</p>
+						{% else %}
+							<p>{{f1.puntuacion}}
+								<i class="fa-solid fa-thumbs-down"></i>
+							</p>
+
+
+						{% endif %}
+					</div>
+					<div class="col-5">
+					<img class="w-100 rounded-3" src="{{ asset('imgs/articulos/' ~ f1.foto )}}">
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+		<div class="noticias col-12 col-lg-4">
+			<h2 class="text-center fw-bold">Noticias</h2>
+			<hr>
+			{% for noticia in articulosNoticia %}
+				<a href="/articulo/{{noticia.id}}" class="rounded-3 border border-dark articuloNoticia row my-4  p-2 text-center d-flex justify-content-center">
+					<img class="col-12 rounded-3" src="{{ asset('imgs/articulos/' ~ noticia.foto )}}">
+
+					<div class="contenidoNoticia col-12 ">
+
+						<h5 class="fw-bold">{{noticia.titulo}}</h5>
+						{% if noticia.puntuacion >= 0 %}
+
+							<p>{{noticia.puntuacion}}
+								<i class="fa-solid fa-thumbs-up fs-5"></i>
+							</p>
+						{% else %}
+							<p>{{noticia.puntuacion}}
+								<i class="fa-solid fa-thumbs-down"></i>
+							</p>
+
+						{% endif %}
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+		<div class="col-12 botonesNavegacion d-flex justify-content-center">
+			{% if pagina > 1 %}
+				<a class="me-2" href="/{{pagina - 1}}">
+					<i class="fa-solid fa-arrow-left"></i>
+					Anterior</a>
+			{% endif %}
+			{% if pagina < pagTotales %}
+				<a href="/{{pagina + 1}}">Siguiente
+					<i class="fa-solid fa-arrow-right"></i>
+				</a>
+			{% endif %}
+
+
+		</div>
+	</div>
+
+	{% if is_granted('ROLE_ADMIN') %}
+		<h1 class="col-12 text-center my-5">Panel Admin</h1>
+		<div class="col-12 d-flex flex-column align-items-center formAnyadeNoticia">
+			<div class="text-center">
+				<i class="fa-solid fa-circle-plus"></i><br>
+				<h2>Añade un articulo<h2></div><br>
+
+					{% if form %}
+						{{ form_start(form) }}
+						{{ form_widget(form) }}
+						{{ form_end(form) }}
+						{% if error %}
+							<p class="error">
+								{{error}}
+							</p>
+						{% endif %}
+					{% endif %}
+
+
+					{% if is_granted('ROLE_SUPER_ADMIN') %}
+
+						<a class="anyadeAdmin mt-5" href="/inicio/anyadeAdmin">Añadir admin</a>
+
+					{% endif %}
+				</div>
+			{% endif %}
+
+
+		{% endblock %}

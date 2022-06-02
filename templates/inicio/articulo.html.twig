@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RuedaQueRueda
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/inicio.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+{% endblock %}
+{% block body %}
+	{% include "header.html.twig" %}
+	{% include "slider.html.twig" %}
+	<div class="row d-flex justify-content-evenly mt-5 articulo1 py-5 px-3 mx-lg-5 mx-md-3 mx-1">
+		<div>
+			<a href="/" class="volver">
+				<i class="fa-solid fa-arrow-left"></i>
+				Volver</a>
+		</div>
+		{% if articulo %}
+			<h1 class="col-12 text-center articuloTitulo mb-5">{{articulo.titulo}}</h1>
+
+
+			<img class="col-lg-5 col-12 " src="{{ asset('imgs/articulos/' ~ articulo.foto )}}">
+			<div class="col-lg-6 col-12">
+
+				<h2 class="articuloSubtitulo mt-5">{{articulo.subtitulo}}</h2>
+				<p class="articuloDescripcion mt-5 fs-4">{{articulo.descripcion}}</p>
+			</div>
+			<div class="puntuacion text-center col-12 text-end mt-5">
+				<p class="">Puntuacion:
+					{{articulo.puntuacion}}</p>
+				{% if is_granted('ROLE_USER') %}
+					{% if califica %}
+						{% if califica.puntuacion == 1 %}
+							<a href="/articulo/{{articulo.id}}/1">
+								<i class="fa-solid fa-thumbs-up fs-5 text-success"></i>
+							</a>&nbsp;
+							<a href="/articulo/{{articulo.id}}/-1">
+								<i class="fa-solid fa-thumbs-down fs-5 text-secondary"></i>
+							</a>
+						{% else %}
+							<a href="/articulo/{{articulo.id}}/1">
+								<i class="fa-solid fa-thumbs-up fs-5 text-secondary"></i>
+							</a>&nbsp;
+							<a href="/articulo/{{articulo.id}}/-1">
+								<i class="fa-solid fa-thumbs-down fs-5 text-danger"></i>
+							</a>
+						{% endif %}
+					{% else %}
+						<a href="/articulo/{{articulo.id}}/1">
+							<i class="fa-solid fa-thumbs-up fs-5 text-secondary"></i>
+						</a>&nbsp;
+						<a href="/articulo/{{articulo.id}}/-1">
+							<i class="fa-solid fa-thumbs-down fs-5 text-secondary"></i>
+						</a>
+					{% endif %}
+				{% endif %}
+			</div>
+			<div class="w-100 text-center mt-3">
+				{% if is_granted('ROLE_ADMIN') %}
+					<a href="/borraArticulo/{{articulo.id}}" class=" text-danger ">Borra articulo
+						<i class="fa-solid fa-trash"></i>
+					</a>
+				{% endif %}
+
+			</div>
+
+		{% else %}
+			<h1>No se ha encontrado el articulo</h1>
+		{% endif %}
+	</div>
+
+{% endblock %}

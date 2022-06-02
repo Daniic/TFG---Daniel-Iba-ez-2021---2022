@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}LogIn
+{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/main.css') }} ">
+{% endblock %}
+{% block body %}
+	<header>
+		<div>
+			<img src="{{ asset('imgs/logo2.png') }}">
+		</div>
+
+	</header>
+	<div class="formulario d-flex justify-content-center row">
+		<div class="formulario1 col-6 col-lg-4 ">
+			<h2>Inicia sesión</h2>
+			<form action="{{ path('app_login') }}" method="post">
+				<div>
+					<label for="_username">Usuario</label>
+					<input type="text" id="username" name="_username" value="{{ ultimo_usuario}}"/>
+				</div>
+				<div>
+					<label for="_password">Contraseña</label>
+					<input type="password" id="password" name="_password"/>
+				</div>
+				<input type="hidden" name="inicio" value="/"/>
+
+				<button type="submit">
+					Iniciar Sesión
+				</button><br>
+				<button>
+					<a href="/registro">No eres miembro? Regístrate</a>
+				</button><br>
+				<button>
+					<a href="/">Continua sin iniciar sesion</a>
+				</button>
+			</form>
+			{% if error %}
+				<p class="error">
+					{{error.messageKey|trans(error.messageData, 'security') }}
+				</p>
+			{% endif %}
+			
+
+
+		</div>
+	</div>
+	<footer>
+				<div>
+					<img src="{{ asset('imgs/logo2.png') }}">
+				</div>
+
+			</footer>
+{% endblock %}

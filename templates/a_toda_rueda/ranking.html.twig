@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A Toda Rueda!
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/aTodaRueda.css') }} ">
+
+{% endblock %}
+{% block body %}
+	{% include "header.html.twig" %}
+	<h1 class="text-center mt-4">¡A Toda Rueda!</h1>
+	<h2 class="text-center mt-1">Rankings</h2>
+	<div class="ranking text-center row d-flex justify-content-center ">
+		<div class="col-12 col-sm-10 col-md-8 col-lg-6">
+			<table class="table border-3 mt-5 ">
+				<thead>
+					<tr>
+						<td class="fw-bold"></td>
+						<td class="fw-bold">Usuario</td>
+						<td class="fw-bold">Puntuacion</td>
+					</tr>
+				</thead>
+				{% set posicion = 1 %}
+				<tbody>
+					{% for partida in partidas %}
+						<tr>
+							<td class="fw-bold">{{posicion}}</td>
+							<td>{{partida.usuario.nick}}</td>
+							<td>{{partida.puntuacion}}</td>
+						</tr>
+						{% set posicion = posicion + 1 %}
+
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+{% endblock %}

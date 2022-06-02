@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RuedaSocial
+{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/social.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+{% endblock %}
+
+{% block body %}
+	{% include "header.html.twig" %}
+	<div class="mt-5 publicar d-flex align-items-center flex-column text-center container">
+		<h1 class="text-center fw-bold">Publicar foto</h1>
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		{{ form_end(form) }}
+	</div>
+	
+{% endblock %}

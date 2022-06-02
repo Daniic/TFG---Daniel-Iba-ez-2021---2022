@@ -1,0 +1,52 @@
+#contenedorGeneral{
+    height: 100vh;
+}
+header{
+    margin-top: 10vh;
+    height: 150px;
+    padding: 10px 30px;
+    text-align: center;
+}
+header div{
+    height: 100%;
+    flex: 1;
+}
+.titulo{
+    text-align: center;
+}
+header img{
+    height: 100%;
+}
+.formulario{
+    margin-top: 20px;
+    text-align: center;
+}
+.formulario1{
+    padding: 15px 0;
+    color: black;
+    border: 3px dashed black;
+    border-radius: 15px;
+    
+
+}
+.formulario1 input{
+    background-color: #efefef;
+    border: none;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+button{
+    background-color: #757575;
+    border-radius: 5px;
+    border: 3px solid black;
+    padding: 5px;
+    margin-top: 10px;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+footer{
+    display: none !important;
+}

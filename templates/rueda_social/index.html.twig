@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RuedaQueRueda
+{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/social.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+{% endblock %}
+
+{% block body %}
+	{% include "header.html.twig" %}
+	<div class="row m-5 mx-1 mx-sm-2 mx-md-3  d-flex justify-content-center">
+		<div class="col-12 col-sm-10 col-md-8 col-lg-6 publicaciones">
+			<h1 class="fw-bold text-center mb-5">Rueda Social</h1>
+			{% for publicacion in publicaciones %}
+				<a href="/social/publicacion/{{publicacion.id}}" class="text-center rounded-3 p-4 mt-5 publicacion d-block">
+					<div class="fw-bold fs-4">{{publicacion.usuario.nick}}</div>
+					<img class="w-75 my-5" src="{{ asset('imgs/publicaciones/' ~ publicacion.foto )}}">
+					<div class="fs-5 fw-light">{{publicacion.descripcion}}</div>
+					
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+	<nav class="navBottom d-flex px-5 py-2 container">
+		<a class="col-1 text-center" href="/social/inicio">
+			<i class="fa-solid fa-house"></i>
+		</a>
+		<form class="col-10 buscar text-center" action="{{ path('app_social_busqueda') }}" method="post">
+			<input type="text" name="busqueda" placeholder="Nick" class="rounded-pill px-3 text-center">
+			<button type="submit" id="buscarBtn">
+				Buscar
+			</button>
+		</form>
+		<a class="col-1 text-center" href="/social/publicar">
+			<i class="fa-solid fa-circle-plus"></i>
+		</a>
+	</nav>
+{% endblock %}

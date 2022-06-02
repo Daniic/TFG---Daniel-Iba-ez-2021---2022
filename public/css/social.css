@@ -1,0 +1,94 @@
+.navBottom{
+    height: 6vh;
+    position: fixed;
+    top: 94vh;
+    background-color: #4B4646;
+}
+.navBottom a{
+    color: #070707;
+}
+.navBottom i{
+    font-size: 35px;
+}
+.navBottom input{
+    height: 35px;
+    border: 1px solid black;
+    width: 50%;
+}
+#buscarBtn{
+    display: none;
+}
+.footerEnd{
+    padding-bottom: 50px;
+}
+.publicaciones{
+    min-height: 60vh;
+}
+.publicacion{
+    border: 1px solid #070707;
+    background-color: #efefef;
+    text-decoration: none;
+    color: #4B4646;
+}
+.publicacion:hover{
+    color: #4B4646;
+}
+
+@media (max-width: 991px) {
+    .navBottom input{
+        height: 35px;
+        border: 1px solid black;
+        width: 80%;
+    }
+}
+
+/*Pagina publicar*/
+.publicar{
+    min-height: 70vh;
+}
+.publicar form{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.1em;
+}
+label{
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.publicar textarea,.publicar input{
+    display: block;
+    width: 100%;
+}
+form button{
+    display: block;
+    margin-top: 20px;
+    border: 0px solid ;
+    background-color: #070707;
+    color: #F05829;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+}
+/* Pagina publicacion*/
+.publicacion1{
+    margin: 0 auto;
+    background-color: #efefef;
+    min-height: 70vh;
+}
+.comenta textarea{
+    display: inline-block;
+
+}
+.volver{
+    margin-top: 20px;
+    color: #F05829;
+    background-color: #070707;
+    padding: 5px 10px;
+    text-decoration: none;
+
+}

@@ -1,0 +1,117 @@
+.carretera {
+    width: 600px;
+    margin: 0 auto;
+    height: 600px;
+    overflow: hidden;
+}
+
+.carril1,
+.carril2,
+.carril3,
+.carril4,
+.carril5 {
+    /* border-right: 3px dashed white;
+    border-left: 3px dashed white; */
+    height: 100%;
+    background-color: #2c3456;
+    padding: 0 25px;
+    overflow: hidden;
+
+}
+
+.carril1 {
+    border-left: 6px solid white;
+}
+
+.carril5 {
+    border-right: 6px solid white;
+}
+
+.pantallaJugar, .pantallaFin {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    transform: translate(-50%, -50%);
+    background-color: #efefef;
+    box-shadow: 0 5px 5px #757575;
+    padding: 15px;
+    z-index: 100;
+}
+.pantallaFin a, .pantallaJugar a{
+    margin: 10px;
+    text-decoration: none;
+    background-color: #070707;
+    padding: 5px;
+    color: #F05829;
+}
+.pantallaJugar span:hover {
+    cursor: pointer;
+    background-color: #757575;
+    transition: .3s;
+}
+
+
+.jugador {
+    display: inline-block;
+    width: 50px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 50px 100px;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.oculto {
+    display: none;
+}
+
+.linea {
+    width: 5px !important;
+    padding: 0;
+    display: inline-block;
+    height: 100px;
+    background: white;
+    position: relative;
+}
+
+.enemigo {
+    display: inline-block;
+    width: 50px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: 50px 100px;
+    position: relative;
+    margin-left: 15px;
+    border-radius: 15px;
+}
+
+
+.coche1 {
+    background-image: url(../imgs/aTodaRueda/carF1_1.png);
+}
+
+.coche2 {
+    background-image: url(../imgs/aTodaRueda/carF1_2.png);
+}
+
+.coche3 {
+    background-image: url(../imgs/aTodaRueda/carF1_3.png);
+}
+
+/* pagina ranking */
+.ranking{
+    min-height: 600px;
+}
+.ranking tr {
+    padding: 20px auto;
+    margin-top: 10px;
+    background-color: #070707 !important;
+    color: #F05829 !important;
+    border-color: #F05829 !important;
+}
+tbody{
+    border-color: #F05829 !important;
+}

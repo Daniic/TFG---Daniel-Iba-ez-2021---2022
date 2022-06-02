@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/main.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/inicio.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+
+{% endblock %}
+{% block body %}
+	{% include "header.html.twig" %}
+	<div class="formulario d-flex justify-content-center row">
+		<div class="formulario1 col-lg-4 col-md-6 col-8 mt-5">
+			<h2>Añadir admin</h2>
+
+
+			{{ form_start(form) }}
+			{{ form_widget(form) }}
+			{{ form_end(form) }}
+
+			{% if error %}
+				<p class="error">
+					{{error}}
+				</p>
+			{% endif %}
+			
+		</div>
+	</div>
+
+{% endblock %}

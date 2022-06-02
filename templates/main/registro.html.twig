@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registro
+{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/main.css') }} ">
+{% endblock %}
+{% block body %}
+	<header>
+		<div>
+			<img src="{{ asset('imgs/logo2.png') }}">
+		</div>
+
+
+	</header>
+	<div class="formulario d-flex justify-content-center row">
+		<div class="formulario1 col-lg-4 col-md-6 col-8">
+			<h2>Registro</h2>
+
+
+			{{ form_start(form) }}
+			{{ form_widget(form) }}
+			{{ form_end(form) }}
+
+			{% if error %}
+				<p class="error">
+					{{error}}
+				</p>
+			{% endif %}
+			<button>
+				<a href="/login">Ya eres miembro? Inicia Sesión</a>
+			</button>
+		</div>
+	</div>
+{% endblock %}

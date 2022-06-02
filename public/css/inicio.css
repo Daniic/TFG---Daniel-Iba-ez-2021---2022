@@ -1,0 +1,147 @@
+.formAnyadeNoticia i{
+    font-size: 30px;
+}
+.formAnyadeNoticia form{
+    opacity: 1;
+    top: 0;
+    height: auto;
+    transition: .5s;
+    text-align: center;
+    border: 3px dashed black;
+    border-radius: 5px;
+    padding: 25px;
+}
+.formAnyadeNoticia form *{
+    display: block;
+}
+.formAnyadeNoticia form textarea{
+    width: 100%;
+}
+.formAnyadeNoticia form button{
+    margin: 0 auto;
+}
+#anyade_articulo_subtitulo{
+    width: 100%;
+}
+form input, form select{
+    margin: 10px auto;
+}
+form button{
+    display: block;
+    margin-top: 10px;
+    border: 0px solid ;
+    background-color: #070707;
+    color: #F05829;
+    padding: 10px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.contenidoF1{
+    height: 100%;
+}
+.contenidoF1 p{
+    text-align: right;
+}
+.contenidoF1 p{
+    margin: 0;
+}
+.articuloF1{
+    text-decoration: none;
+    color: black;
+    background-color: #efefef;
+    padding: 10px;
+    margin: 0 auto;
+}
+.articuloF1 img{
+    height: 100%;
+}
+
+.contenidoNoticia{
+    height: 100%;
+    padding: 15px;
+}
+.contenidoNoticia p{
+    margin-top: 10px;
+}
+.contenidoNoticia h5{
+    margin-top: 10px;
+}
+.articuloNoticia{
+    margin-right: 20px;
+    background-color: #efefef;
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    margin: 0 auto;
+}
+.articuloNoticia img{
+   height: 60%;
+   width: auto;
+}
+.articuloNoticia, .articuloF1{
+    color: #4B4646;
+}
+.articuloNoticia:hover, .articuloF1:hover{
+    color: #4B4646;
+}
+.botonesNavegacion a{
+    text-decoration: none;
+    background-color: #070707;
+    color: #F05829;
+    padding: 5px 10px;
+}
+.anyadeAdmin{
+    margin: 0 auto;
+    text-decoration: none;
+    color: #F05829;
+    background-color: #070707;
+    padding: 5px 10px;
+    align-self: center;
+}
+@media (max-width: 767px) {
+    .articuloF1{
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 98% !important;
+    }
+    .articuloNoticia{
+     
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 98% !important;
+    }
+   
+
+}
+/*Estilos para la pagina especifica del articulo*/
+.articulo1{
+    background-color: #efefef;
+    border: 1px solid black;
+}
+.articuloTitulo{
+    font-weight: 700;
+}
+.articuloDescripcion{
+    font-weight: 200;
+}
+.puntuacion a{
+    width: 50px;
+}
+.volver{
+    text-decoration: none;
+    color: #F05829;
+    background-color: #070707;
+    padding: 5px 10px;
+}
+
+/*Pagina de añadir admin*/
+.formulario1 button{
+    width: 75%;
+    text-decoration: none;
+    color: #F05829;
+    background-color: #070707;
+    padding: 5px 10px;
+    align-self: center;
+    margin: 0 auto;
+}

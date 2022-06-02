@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A Toda Rueda!
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/aTodaRueda.css') }} ">
+
+{% endblock %}
+{% block body %}
+	{% include "header.html.twig" %}
+	<h1 class="text-center mt-4">¡A Toda Rueda!</h1>
+	<div class="  d-flex row justify-content-around pantallaJugar rounded-3 p-3">
+		<p class="col-12 text-center fw-bold fs-4">Elige con que coche correr</p>
+		<span class="col-md-3 col-7  m-0 mb-1 p-1 border border-dark text-center rounded-3" onclick="start(1)"><img class="w-50" src="{{asset('imgs/aTodaRueda/carF1_1.png')}}"></span>
+		<span class="col-md-3 col-7  m-0 mb-1 p-1 border border-dark text-center rounded-3" onclick="start(2)"><img class="w-50" src="{{asset('imgs/aTodaRueda/carF1_2.png')}}"></span>
+		<span class="col-md-3 col-7  m-0 mb-1 p-1 border border-dark text-center rounded-3" onclick="start(3)"><img class="w-50" src="{{asset('imgs/aTodaRueda/carF1_3.png')}}"></span>
+		<a class="col-6 text-center rounded-3" href="/aTodaRueda/ranking">Ver rankings
+			<i class="fa-solid fa-ranking-star"></i>
+		</a>
+	</div>
+	<div class="pantallaDeJuego">
+		<div>
+			<div class=" fs-5 text-center" id="puntuacion">Puntuacion: 0</div>
+			<div class="carretera row d-flex ">
+				<div class="col-1 "></div>
+				<div class="carril1 col-2 "></div>
+				<div class="carril2 col-2 "></div>
+				<div class="carril3 col-2 "></div>
+				<div class="carril4 col-2 "></div>
+				<div class="carril5 col-2 "></div>
+				<div class="col-1 "></div>
+
+				<div class="col-1"></div>
+				<div class="col-10 coches border d-flex flex-column text-start"></div>
+				<div class="col-1"></div>
+
+			</div>
+
+		</div>
+	</div>
+	<div class="pantallaFin oculto fs-4 p-2">
+		<p>Tu puntuación ha sido de
+			<span id="puntosFinales" class="fw-bold"></span>
+			puntos</p>
+		<p><a href="/aTodaRueda/inicio" class="p-1 border border-dark text-center rounded-3 m-3 fs-5">Volver a jugar</a></p>
+		<p><a href="" id="enlaceGuardar" class="p-1 border border-dark text-center rounded-3 m-3 fs-5">Guardar puntuacion</a></p>
+	</div>
+
+	<script src="{{asset('js/aTodaRueda.js')}}"></script>
+{% endblock %}

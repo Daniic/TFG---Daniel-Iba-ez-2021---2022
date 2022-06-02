@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}4 ruedas
+{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/cuatro.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+{% endblock %}
+
+{% block body %}
+	{% include "header.html.twig" %}
+	<div class="row mt-5 d-flex flex-column align-items-center vender">
+		<h1 class="text-center">Subir oferta</h1>
+			{{ form_start(form) }}
+			{{ form_widget(form) }}
+			{{ form_end(form) }}
+	</div>
+	<div class="ofertas row p-3 d-flex flex-wrap justify-content-evenly">
+	<h1 class="text-center">Tus ofertas</h1>
+				{% for oferta in ofertas %}
+					<a class="oferta col-md-3 col-sm-5 col-10 m-2 p-3 text-center text-dark rounded-3 border border-dark" href="/cuatroRuedas/oferta/{{oferta.id}}">
+						<img class="col-9 rounded-3" src="{{ asset('imgs/ofertas/' ~ oferta.foto )}}">
+						<p class="fs-4 fw-bold">{{oferta.modelo}}</p>
+						<p class="fs-5">{{oferta.precio}}
+							€</p>
+						<p class="fs-6 text-muted">{{oferta.km}}
+							km</p>
+					</a>
+				{% endfor %}
+			</div>
+{% endblock %}

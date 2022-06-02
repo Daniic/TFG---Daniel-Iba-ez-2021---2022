@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RuedaSocial
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/social.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+{% endblock %}
+{% block body %}
+	{% include "header.html.twig" %}
+	<div class="d-flex row justify-content-center">
+		<div class="mb-5 row d-flex justify-content-evenly mt-5 col-12 col-md-10 col-lg-8 col-xl-6 publicacion1 border border-dark rounded-3 p-5">
+			{% if publicacion %}
+				<p class="text-center mb-5 fs-4">{{publicacion.usuario.nick}}</p>
+				<img class="w-75" src="{{ asset('imgs/publicaciones/' ~ publicacion.foto )}}">
+				<p class="text-center my-5 fw-light fs-5">{{publicacion.descripcion}}</p>
+				<div class="d-flex justify-content-evenly">
+					<a href="/social/like/{{publicacion.id}}">
+						{% if likeUsuario %}
+							<i class="fa-solid fa-heart text-danger fs-2">
+								{{numLikes}}</i>
+						{% else %}
+							<i class="fa-solid fa-heart text-secondary fs-2">
+								{{numLikes}}</i>
+
+						{% endif %}
+					</a>
+					<i class="fa-solid fa-comment-dots text-secondary fs-2">
+						{{numComentarios}}</i>
+				</div>
+				<div>
+					<form class="w-100 comenta row my-4 p-0" action="{{ path('app_social_comenta') }}" method="post">
+						<textarea name="comenta" placeholder="Deja un comentario..." class="px-3 col-10"></textarea>
+						<input type="hidden" name="id" value="{{publicacion.id}}"/>
+						<button type="submit" id="comentaBtn" class="col-2">
+							Comenta
+						</button>
+					</form>
+					<div>
+						{% for comentario in comentarios %}
+
+							<p class=" fs-5">{{comentario.usuario.nick}}</p>
+							<p class="fw-light ms-3">{{comentario.texto}}</p>
+
+						{% endfor %}
+					</div>
+				</div>
+				{% if usuario == publicacion.usuario %}
+					<a class="text-danger text-center w-100" href="/social/borraPublicacion/{{publicacion.id}}">Borrar publicacion
+						<i class="fa-solid fa-trash"></i>
+					</a>
+				{% endif %}
+				<div class="text-center">
+					<a href="/social/inicio" class="volver ">
+						<i class="fa-solid fa-arrow-left  mt-5"></i>
+						Volver</a>
+				</div>
+
+			{% else %}
+				<h1>No se ha encontrado la publicacion</h1>
+			{% endif %}
+		</div>
+	</div>
+
+{% endblock %}

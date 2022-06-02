@@ -1,0 +1,72 @@
+header{
+    height: 60px;
+    padding: 0px 30px;
+    background-color: #4B4646;
+
+}
+header div{
+    height: 100%;
+}
+ header>a{
+    height: 100%;
+    margin-top: 5px;
+}
+.botonera{
+    display: flex;
+}
+.botonera a{
+    flex: 1;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
+    background-color: #efefef;
+    text-decoration: none;
+    padding-top: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #4B4646;
+}
+.botonera a:hover{
+    background-color: #757575;
+    color: #070707;
+    transition: .2s;
+}
+.titulo{
+    text-align: center;
+}
+header img, header i{
+    height: 90%;
+}
+.aProfile{
+    text-align: right;
+    color: black;
+    font-size: 2.5em;
+}
+@media (max-width: 991px) {
+    header{
+        height: 140px;
+        padding: 0;
+        margin-top: 10px;
+        background-color: #4B4646;
+    }
+    .aProfile{
+        position: absolute;
+        height: 60px;
+        color: black;
+        width: 50%;
+        padding-left: 25px;
+        text-align: left;
+    }
+    .aProfile:hover{
+        color: black;
+        z-index: 5;
+    }
+    header>div{
+        height: 40%;
+        margin-top: 0;
+    }
+    .logo2{
+        height: 60%;
+    }
+    
+}

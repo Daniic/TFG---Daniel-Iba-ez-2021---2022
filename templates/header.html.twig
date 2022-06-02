@@ -1,0 +1,21 @@
+<header class="d-flex row">
+	<a href="/" class="col-lg-2 col-12 d-lg-block d-none text-center"><img src="{{ asset('imgs/logo2.png') }} "></a>
+	<a href="/" class="col-lg-2 col-12 d-block d-lg-none text-center logo2"><img src="{{ asset('imgs/logo1.png') }} "></a>
+	<div class="botonera col-12 col-lg-8 ">
+		<a href="/">Inicio</a>
+		<a href="/social/inicio">Rueda Social</a>
+		<a href="/cuatroRuedas/inicio">Cuatro Ruedas</a>
+		<a href="/aTodaRueda/inicio">A toda Rueda</a>
+	</div>
+	{% if usuario %}
+		<a href="/logout" class="aProfile col-lg-2 col-12  text-lg-center ">
+			<i class="fa-solid fa-arrow-right-from-bracket"></i>
+		</a>
+	{% else %}
+		<a href="/login" class="aProfile col-lg-2 col-12  text-lg-center ">
+			<i class="fa-solid fa-circle-user"></i>
+		</a>
+	{% endif %}
+
+
+</header>

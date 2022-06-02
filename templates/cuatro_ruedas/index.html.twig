@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}4 ruedas
+{% endblock %}
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/cuatro.css') }} ">
+	<link rel="stylesheet" href="{{ asset('css/header.css') }} ">
+{% endblock %}
+
+{% block body %}
+	{% include "header.html.twig" %}
+	<div class="principal row mt-5">
+		<div class="col-lg-3 order-2 order-lg-1 col-12 lateral border-end border-dark">
+			<div class="ms-4">
+				<a href="/cuatroRuedas/vende" class="botonVende">Vende tu coche</a>
+			</div>
+			<hr>
+			<div class="filtros ms-4">
+			<h3>Filtros</h3>
+				{{ form_start(form) }}
+				{{ form_widget(form) }}
+				{{ form_end(form) }}
+				<a href="/cuatroRuedas/inicio" class="restablecer">Restablecer filtros</a>
+			</div>
+
+		</div>
+		<div class="col-lg-9 col-12 order-1 order-lg-2 tienda">
+			<h1 class="text-center">Tienda
+				<br>
+				4 ruedas</h1>
+			<div class="ofertas row p-3 d-flex flex-wrap justify-content-evenly">
+				{% for oferta in ofertas %}
+					<a class="oferta col-md-3 col-sm-5 col-10 m-2 text-center text-dark rounded-3 border border-dark p-3" href="/cuatroRuedas/oferta/{{oferta.id}}">
+						<img class="col-9 rounded-3" src="{{ asset('imgs/ofertas/' ~ oferta.foto )}}">
+						<p class="fs-4 fw-bold">{{oferta.modelo}}</p>
+						<p class="fs-5">{{oferta.precio}}
+							€</p>
+						<p class="fs-6 text-muted">{{oferta.km}}
+							km</p>
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
